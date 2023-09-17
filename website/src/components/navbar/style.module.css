@@ -1,0 +1,101 @@
+/** @format */
+
+.navbar {
+  color: white;
+  padding: 15px;
+  background: transparent;
+  position: fixed;
+  z-index: 10;
+  box-shadow: 4px 10px -8px rgb(0, 0, 0);
+  display: flex;
+  font-size: 19.19px;
+  align-items: center;
+  background-color: rgb(12, 12, 2);
+  width: 100%;
+  right: 0;
+  background: rgb(2, 9, 15);
+}
+
+.link_container {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  list-style: none;
+  color: white;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  text-transform: capitalize;
+}
+
+.link_container li .hire_me {
+  background-color: rgb(5, 31, 59);
+  border-radius: 4px;
+  padding: 8px 15px;
+  border: none;
+}
+
+.input_container {
+  display: flex;
+}
+
+.menu_btn {
+  position: absolute;
+  right: 9px;
+  padding: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+  display: none;
+  background: transparent;
+}
+
+.menu span {
+  font-size: 50px;
+  color: white;
+}
+
+@media screen and (min-width: 100px) and (max-width: 780px) {
+  .menu_btn {
+    display: block;
+  }
+
+  .link_container {
+    position: absolute;
+    bottom: -100px;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgb(8, 27, 46);
+    margin-left: 0;
+    right: 0;
+    gap: 15px;
+    display: none;
+    z-index: 10;
+    height: 100px;
+  }
+
+  .link_container li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .link_container li .hire_me {
+    width: 100%;
+    border-radius: 4px;
+    padding: 8px 15px;
+    flex: 0 0 auto;
+    border: none;
+  }
+
+  .open {
+    display: flex;
+  }
+}

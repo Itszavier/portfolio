@@ -1,0 +1,151 @@
+/** @format */
+
+.content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 55px;
+  align-items: center;
+  background: linear-gradient(to right, rgb(2, 9, 15), rgb(5, 20, 34));
+}
+
+.form_container {
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  /*background-color: rgb(8, 27, 46);*/
+}
+
+.form {
+  padding: 10px;
+  width: 780px;
+  display: flex;
+  color: white;
+  gap: 10px;
+  flex-direction: column;
+  padding: 10px;
+  width: 600px;
+}
+
+.input_wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.input_wrapper label {
+  text-transform: capitalize;
+}
+
+.input_wrapper input {
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  background: rgb(223, 223, 230);
+  border: none;
+  color: white;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    rgb(4, 17, 29, 4.8),
+    rgb(6, 22, 37, 4.8)
+  );
+}
+
+.input_wrapper input::placeholder {
+  text-transform: capitalize;
+}
+
+.input_wrapper textarea {
+  resize: none;
+  height: 200px;
+  background: rgb(5, 23, 39);
+  border: none;
+  outline: none;
+  color: white;
+  padding: 10px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    rgb(4, 17, 29, 4.8),
+    rgb(6, 22, 37, 4.8)
+  );
+  background: linear-gradient(to right, rgb(4, 17, 29), rgb(6, 22, 37));
+}
+
+.input_container {
+  display: flex;
+  gap: 10px;
+}
+
+.title {
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 4px;
+}
+
+.text {
+  color: grey;
+}
+
+.button_container {
+  display: flex;
+  align-items: center;
+}
+
+.submit_btn {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  width: 140px;
+  align-items: center;
+  background-color: rgb(5, 31, 59);
+  color: white;
+  margin-left: auto;
+}
+
+.submit_btn:hover {
+  cursor: pointer;
+  background-color: rgb(6, 36, 68);
+}
+
+.other_methods {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  width: fit-content;
+}
+
+.link {
+  transition: transform 0.3s ease;
+}
+
+.link:hover {
+  transform: translateY(-8px);
+}
+
+@media screen and (min-width: 100px) and (max-width: 780px) {
+  .form {
+    padding: 0;
+    width: 100%;
+  }
+
+  .form_container {
+    padding: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .input_container {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+}
