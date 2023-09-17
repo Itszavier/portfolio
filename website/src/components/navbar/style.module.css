@@ -58,6 +58,22 @@
   color: white;
 }
 
+.logo_wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-direction: row;
+  width: 200px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+
+
 @media screen and (min-width: 100px) and (max-width: 780px) {
   .menu_btn {
     display: block;

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo2.jpg";
 
 const CloseMenu = () => {
   return (
@@ -24,11 +25,15 @@ export default function Navbar() {
 
   return (
     <nav className={style.navbar}>
-      <div>
-        <Link style={{ color: "white", textDecoration: "none" }} to="/">
-          <h3>Imani Brown</h3>
-        </Link>
-      </div>
+      <Link
+        className={style.logo_wrapper}
+        style={{ color: "white", textDecoration: "none" }}
+        to="/"
+      >
+        <img className={style.logo} src={logo} alt="logo" />
+        <h3>Imani Brown</h3>
+      </Link>
+
       <button
         className={style.menu_btn}
         onClick={() => setOpen((prev) => !prev)}
