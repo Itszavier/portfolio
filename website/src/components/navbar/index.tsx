@@ -41,18 +41,23 @@ export default function Navbar() {
         {open ? <OpenMenu /> : <CloseMenu />}
       </button>
 
-      <ul className={`${style.link_container}  ${open ? style.open : ""}`}>
-        <li>
-          <Link to="/contact" className={style.link}>
-            contact
-          </Link>
-        </li>
-        <li>
-          <a href="#" className={`${style.link} ${style.hire_me}`}>
-            hire
-          </a>
-        </li>
-      </ul>
+      <div className={`${style.link_container}  ${open ? style.open : ""}`}>
+        <Link
+          onClick={() => setOpen(false)}
+          to="/contact"
+          className={style.link}
+        >
+          contact
+        </Link>
+
+        <a
+          href="#"
+          onClick={() => setOpen(false)}
+          className={`${style.link} ${style.hire_me}`}
+        >
+          hire
+        </a>
+      </div>
     </nav>
   );
 }

@@ -89,6 +89,14 @@
     scroll-snap-type: y mandatory;
   }
 
+  .card_container::-webkit-scrollbar-thumb {
+    display: none;
+  }
+
+  .card_container::-webkit-scrollbar-track {
+    visibility: hidden;
+  }
+
   .card {
     width: 340px;
   }

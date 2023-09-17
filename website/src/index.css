@@ -1,7 +1,6 @@
 /** @format */
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-
 * {
   padding: 0;
   margin: 0;
@@ -19,4 +18,34 @@ body {
 #root {
   width: 100%;
   height: 100%;
+}
+
+/* For WebKit-based browsers (Chrome, Safari) */
+/* This will style the scrollbar track and thumb */
+/* You can modify the colors and styles to your preference */
+/* This example sets the track to a light gray and the thumb to a dark gray */
+::-webkit-scrollbar {
+  width: 11px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  /* color of the track */
+  background: linear-gradient(to right, rgb(2, 9, 15), rgb(5, 20, 34));
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #041231; /* color of the thumb */
+  border-radius: 10px;
+  width: 8px;
+  height: 2px;
+}
+
+/* For Firefox and some other browsers */
+/* This will style the scrollbar width and color */
+/* You can modify the colors and styles to your preference */
+/* This example sets the width to 12px and the color to dark gray */
+body {
+  scrollbar-width: 11px; /* width of the scrollbar */
+  scrollbar-color: #333 #f1f1f1; /* thumb and track colors */
+  scroll-behavior: smooth;
 }

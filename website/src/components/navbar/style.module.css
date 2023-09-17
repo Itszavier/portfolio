@@ -31,7 +31,7 @@
   text-transform: capitalize;
 }
 
-.link_container li .hire_me {
+.hire_me {
   background-color: rgb(5, 31, 59);
   border-radius: 4px;
   padding: 8px 15px;
@@ -72,8 +72,6 @@
   border-radius: 20px;
 }
 
-
-
 @media screen and (min-width: 100px) and (max-width: 780px) {
   .menu_btn {
     display: block;
@@ -90,24 +88,20 @@
     gap: 15px;
     display: none;
     z-index: 10;
-    height: 100px;
+    padding: 10px;
   }
 
-  .link_container li {
-    width: 100%;
-    text-align: center;
-  }
+
 
   .link {
     width: 100%;
     text-align: center;
   }
 
-  .link_container li .hire_me {
+  .hire_me {
     width: 100%;
     border-radius: 4px;
     padding: 8px 15px;
-    flex: 0 0 auto;
     border: none;
   }
 
