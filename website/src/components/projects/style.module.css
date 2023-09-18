@@ -44,6 +44,7 @@
   border-radius: 10px;
   /* background: linear-gradient(to right, rgb(15, 15, 2), rgb(26, 26, 3));*/
   background: linear-gradient(to right, rgb(2, 9, 15), rgb(5, 20, 34));
+  height: 295px;
 }
 
 .button_wrapper {
@@ -73,9 +74,17 @@
   text-align: center;
 }
 
+.description {
+  display: -webkit-box; /* Required for this to work. */
+  -webkit-line-clamp: 3; /* Truncate text at 3 lines. */
+  -webkit-box-orient: vertical; /* Required for this to work. */
+  overflow: hidden;
+}
+
 .image {
   border-radius: 2px;
   height: 120px;
+  object-fit: cover;
 }
 
 @media screen and (min-width: 100px) and (max-width: 780px) {

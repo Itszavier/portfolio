@@ -20,11 +20,10 @@ const projects: IProjectData[] = [
   },
 
   {
-    name: "SoundScript(Text To Speech)",
-    description:
-      "SoundScript is a Text To Speech website that allows you to convert text to speech and download it",
-    link: "#",
-    image: "https://i.ibb.co/mShmmsc/design11-01-generated.jpg",
+    name: "Senior7(s7)",
+    description: `Meet S7, the reliable Utilities bot on Discord that runs 24/7. Our team of professional developers ensures that it is always well-maintained for optimal performance. `,
+    link: "https://s7bot.onrender.com/",
+    image: "https://i.ibb.co/Y0VbpSv/management-service.png",
     bot: false,
   },
 ];

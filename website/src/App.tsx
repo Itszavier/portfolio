@@ -9,14 +9,14 @@ import Footer from "./components/footer";
 
 function App() {
   return (
-    <React.Fragment>
+    <>
       <Navbar />
       <Routes>
         <Route element={<Home />} path="/" />
         <Route element={<Contact />} path="/contact" />
       </Routes>
       <Footer />
-    </React.Fragment>
+    </>
   );
 }
 

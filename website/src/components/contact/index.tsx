@@ -8,13 +8,16 @@ import z, { ZodIssue } from "zod";
 
 import { useState } from "react";
 import { request } from "../../utils/axios";
+import axios from "axios";
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState<ZodIssue[]>([]);
-  const [sent, setSent] = useState<boolean>(false);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -46,6 +49,8 @@ export default function Contact() {
 
       const validate = formSchema.safeParse({ name, email, message });
 
+      setLoading(true);
+
       if (validate.success) {
         request
           .post("contact-me", {
@@ -55,19 +60,29 @@ export default function Contact() {
           })
           .then((res) => {
             console.log(res);
-            setSent(true);
-
-            
+            setSuccessMessage(
+              "Your message was sent successfully, thank you for contacting us"
+            );
+            setLoading(false);
           })
           .catch((err) => {
             console.log(err);
             alert("unexpected error occured");
+            setLoading(false);
           });
       } else {
         setErrors(validate.error.errors);
+        setLoading(false);
       }
     } catch (error) {
-      console.log(error);
+      setLoading(false);
+      if (axios.isAxiosError(error)) {
+        setError(error.response?.data.message);
+      } else {
+        setError(
+          "Sorry, a unexpected error occured developer has been notified"
+        );
+      }
     }
   };
 
@@ -132,9 +147,21 @@ export default function Contact() {
             </div>
 
             <button type="submit" className={style.submit_btn}>
-              Submit
+              Submit {loading ? "..." : ""}
             </button>
           </div>
+
+          {successMessage && (
+            <div className={style.success_message}>
+              <p className={style.message}>{successMessage}</p>
+            </div>
+          )}
+
+          {error && (
+            <div className={style.success_message}>
+              <p className={style.error_message}>{error}</p>
+            </div>
+          )}
         </form>
       </div>
     </div>
