@@ -7,13 +7,13 @@ const socials = [
   {
     name: "instagram",
     icon: insta,
-    link: "#",
+    link: "https://www.instagram.com/itszavier_1/",
   },
 
   {
     name: "discord",
     icon: discord,
-    link: "#",
+    link: "https://discord.gg/sKmfq7DU58",
   },
 ];
 

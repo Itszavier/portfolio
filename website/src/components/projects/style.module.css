@@ -7,7 +7,8 @@
   width: 100%;
   padding: 10px 0px;
   box-shadow: inset 4p 9px 4px;
-  background-color: rgb(240, 241, 243);
+  background-color: rgb(196, 194, 194);
+  background: linear-gradient(to left, rgb(189, 187, 187), rgb(158, 157, 157));
 }
 
 .wrapper {
@@ -32,10 +33,11 @@
 }
 
 .card {
-  width: 390px;
+  width: 330px;
   background-color: rgb(15, 15, 2);
   color: white;
   display: flex;
+  position: relative;
   flex-direction: column;
   padding: 10px;
   flex: 0 0 auto;
@@ -45,6 +47,7 @@
   /* background: linear-gradient(to right, rgb(15, 15, 2), rgb(26, 26, 3));*/
   background: linear-gradient(to right, rgb(2, 9, 15), rgb(5, 20, 34));
   height: 295px;
+  box-shadow: 4px 8px 4px 2px rgb(22, 22, 3);
 }
 
 .button_wrapper {
@@ -52,6 +55,11 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
 }
 
 .button_wrapper a {

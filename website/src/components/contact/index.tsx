@@ -3,9 +3,7 @@
 import style from "./style.module.css";
 import discord from "../../assets/discord.png";
 import insta from "../../assets/instagram.png";
-
 import z, { ZodIssue } from "zod";
-
 import { useState } from "react";
 import { request } from "../../utils/axios";
 import axios from "axios";
@@ -98,8 +96,8 @@ export default function Contact() {
   return (
     <div className={style.content}>
       <Meta
-        title="imani brown - contact me"
-        description="imani brown contact infomation"
+        title="Imani Brown | Contact"
+        description="imani brown contact information"
       />
       <div className={style.form_container}>
         <form className={style.form} onSubmit={handleSubmit}>
@@ -143,10 +141,18 @@ export default function Contact() {
 
           <div className={style.button_container}>
             <div className={style.other_methods}>
-              <a className={style.link} href="#" target="_blank">
+              <a
+                className={style.link}
+                href="https://www.instagram.com/itszavier_1/"
+                target="_blank"
+              >
                 <img src={insta} alt="image" width={45} height={45} />
               </a>
-              <a href="#" className={style.link} target="_blank">
+              <a
+                href="https://discord.gg/sKmfq7DU58"
+                className={style.link}
+                target="_blank"
+              >
                 <img src={discord} alt="image" width={45} height={45} />
               </a>
             </div>

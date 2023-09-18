@@ -1,0 +1,29 @@
+/** @format */
+
+.content {
+  height: 100vh;
+  padding-top: 80px;
+  position: relative;
+  background: linear-gradient(to right, rgb(52, 79, 104), rgb(43, 63, 82));
+  background: linear-gradient(to right, rgb(2, 9, 15), rgb(5, 20, 34));
+}
+
+.wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  width: 100%;
+}
+
+.wrapper h2 {
+  text-align: center;
+}
+
+.wrapper p {
+  text-align: center;
+}
+
+@media screen and (min-width: 100px) and (max-width: 780px) {
+}

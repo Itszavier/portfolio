@@ -89,6 +89,7 @@
     display: none;
     z-index: 10;
     padding: 10px;
+    transition: all ease-in-out 9000ms;
   }
 
 

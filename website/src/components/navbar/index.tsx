@@ -2,7 +2,7 @@
 import { useState } from "react";
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
-import logo from "../../../public/logo2.jpg";
+import logo from "../../assets/logo2.jpg";
 
 const CloseMenu = () => {
   return (
@@ -49,19 +49,34 @@ export default function Navbar() {
       <div className={`${style.link_container}  ${open ? style.open : ""}`}>
         <Link
           onClick={() => setOpen(false)}
+          to="/home"
+          className={style.link}
+        >
+         home
+        </Link>
+
+        <Link
+          onClick={() => setOpen(false)}
           to="/contact"
           className={style.link}
         >
           contact
         </Link>
-
         <a
+          onClick={() => setOpen(false)}
+          href=" https://discord.gg/sKmfq7DU58"
+          className={`${style.link} ${style.hire_me}`}
+        >
+          discord Server
+        </a>
+
+        {/* <a
           href="#"
           onClick={() => setOpen(false)}
           className={`${style.link} ${style.hire_me}`}
         >
           hire
-        </a>
+      </a>*/}
       </div>
     </nav>
   );
