@@ -9,6 +9,10 @@
   background: linear-gradient(to right, rgb(2, 9, 15), rgb(5, 20, 34));
 }
 
+.error {
+  text-align: center;
+  color: rgb(240, 47, 22);
+}
 .form_container {
   width: fit-content;
   height: fit-content;
@@ -27,6 +31,7 @@
   color: white;
   gap: 10px;
   flex-direction: column;
+  height: fit-content;
   padding: 10px;
   width: 600px;
 }
@@ -132,15 +137,25 @@
 }
 
 @media screen and (min-width: 100px) and (max-width: 780px) {
+  .content {
+    padding-top: 95px;
+    height: fit-content;
+  }
+  .title {
+    
+  }
   .form {
     padding: 0;
     width: 100%;
+    height: fit-content;
   }
 
   .form_container {
     padding: 0;
     width: 100%;
     padding: 10px;
+    padding-bottom: 20px;
+    height: fit-content;
   }
 
   .input_container {

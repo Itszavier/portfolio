@@ -1,11 +1,78 @@
 /** @format */
 
 import { Router } from "express";
+import { z } from "zod";
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 const router = Router();
 
-router.post("/contact_me", (req, res, next) => {
-    
+router.get("/", async (req, res, next) => {
+  try {
+    res.status(200).json({
+      success: true,
+      message: "welcome to the api routes",
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post("/contact-me", async (req, res, next) => {
+  try {
+    const bodySchema = z.object({
+      name: z
+        .string({
+          invalid_type_error: "name must be a string",
+          required_error: "required field name was not provided",
+        })
+        .min(1, "Name must be a minmuim length of 1 are greater"),
+
+      email: z
+        .string({
+          invalid_type_error: "email must be a string",
+          required_error: "required field name was not provided",
+        })
+        .min(2, "Name must be a minmuim length of 2 are greater")
+        .email("Please provide a valid email"),
+
+      message: z
+        .string({
+          invalid_type_error: "message must be a string",
+          required_error: "required field name was not provided",
+        })
+        .min(2, "Name must have a minmuim length of 2 are greater"),
+    });
+
+    bodySchema.parse(req.body);
+
+    const body: z.infer<typeof bodySchema> = req.body;
+
+    const tranporter = nodemailer.createTransport({
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+      service: "hotmail",
+    });
+
+    const info = await tranporter.sendMail({
+      from: process.env.EMAIL_USER, // sender address
+      to: "imanibrown421@gmail.com", // list of receivers
+      subject: `(Personal Website contact you) - (${body.name})`, // Subject line
+      text: `name:${body.name} - email: ${body.email},\n\n${body.message}`,
+    });
+
+    res.json({
+      success: true,
+      message: "Your message was successfully send, Thank you contacting me",
+      data: info,
+    });
+  } catch (error) {
+    next(error);
+  }
 });
 
 export default router;
