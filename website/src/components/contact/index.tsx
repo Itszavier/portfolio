@@ -9,6 +9,7 @@ import z, { ZodIssue } from "zod";
 import { useState } from "react";
 import { request } from "../../utils/axios";
 import axios from "axios";
+import Meta from "../meta";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -96,6 +97,10 @@ export default function Contact() {
 
   return (
     <div className={style.content}>
+      <Meta
+        title="imani brown - contact me"
+        description="imani brown contact infomation"
+      />
       <div className={style.form_container}>
         <form className={style.form} onSubmit={handleSubmit}>
           <h1 className={style.title}>Contact Me</h1>
