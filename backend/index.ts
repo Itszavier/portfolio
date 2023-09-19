@@ -15,8 +15,10 @@ app.use(bodyParser.json());
 app.use("/api", apiRoutes);
 
 if (process.env.MODE === "Production") {
-  app.get("*", (req, res, next) => {
-    res.sendFile(path.resolve(__dirname, "../frontend/dist/"));
+  app.use(express.static(path.resolve(__dirname, "./frontend/dist")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./frontend/dist/index.html"));
   });
 } else {
   app.get("/", (req, res) => {
@@ -24,12 +26,12 @@ if (process.env.MODE === "Production") {
   });
 }
 
-app.use((err: any, req: express.Request, res: express.Response) => {
-  if (err.code) {
+app.use((err: any, req: express.Request, res: express.Response, next: any) => {
+  if (err.statusCode) {
     res.status(err.code).json({
       success: false,
       message: err.message,
-      code: err.code,
+      code: err.statusCode,
       error: err,
     });
   } else {
