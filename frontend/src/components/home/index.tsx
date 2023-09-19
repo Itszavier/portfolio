@@ -1,6 +1,4 @@
 /** @format */
-
-import { Helmet } from "react-helmet-async";
 import Banner from "../banner";
 import Meta from "../meta";
 import Projects from "../projects";

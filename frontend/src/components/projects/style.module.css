@@ -87,6 +87,7 @@
   -webkit-line-clamp: 3; /* Truncate text at 3 lines. */
   -webkit-box-orient: vertical; /* Required for this to work. */
   overflow: hidden;
+  text-align: center;
 }
 
 .image {

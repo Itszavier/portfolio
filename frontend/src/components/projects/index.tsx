@@ -42,7 +42,7 @@ export default function Projects() {
                 <p className={style.description}>{data.description}</p>
               </div>
               <div className={style.button_wrapper}>
-                <a href="#" className={style.link}>
+                <a href={data.link} className={style.link}>
                   visit
                 </a>
               </div>

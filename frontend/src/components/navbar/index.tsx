@@ -49,7 +49,7 @@ export default function Navbar() {
       <div className={`${style.link_container}  ${open ? style.open : ""}`}>
         <Link
           onClick={() => setOpen(false)}
-          to="/home"
+          to="/"
           className={style.link}
         >
          home
@@ -65,6 +65,7 @@ export default function Navbar() {
         <a
           onClick={() => setOpen(false)}
           href=" https://discord.gg/sKmfq7DU58"
+          target="_blank"
           className={`${style.link} ${style.hire_me}`}
         >
           discord Server

@@ -1,6 +1,4 @@
 /** @format */
-
-import React from "react";
 import Home from "./components/home";
 import Navbar from "./components/navbar";
 import { Routes, Route } from "react-router-dom";
