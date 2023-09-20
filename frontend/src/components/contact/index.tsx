@@ -58,7 +58,6 @@ export default function Contact() {
           message,
         })
         .then((res) => {
-          console.log(res);
           setSuccessMessage(
             "Your message was sent successfully, thank you for contacting us"
           );
@@ -68,7 +67,6 @@ export default function Contact() {
           setLoading(false);
         })
         .catch((err) => {
-          console.log(err);
           setLoading(false);
           if (successMessage) {
             setSuccessMessage(null);
