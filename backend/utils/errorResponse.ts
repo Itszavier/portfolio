@@ -1,11 +1,11 @@
 /** @format */
 
 export class ErrorResponse extends Error {
-  code: number;
+  statusCode: number;
 
   constructor(name: string, code: number, message: string) {
     super(message);
-    this.code = code;
+    this.statusCode = code;
     this.name = name;
   }
 }

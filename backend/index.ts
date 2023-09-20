@@ -5,20 +5,35 @@ import bodyParser from "body-parser";
 import apiRoutes from "./routes/api";
 import path from "path";
 import dotenv from "dotenv";
+import { errorMessage } from "./utils/errorResponse";
+import errorHandler from "./middleware/error";
 const app = express();
-dotenv.config();
+
+dotenv.config({ path: "../.env" });
+
 const port = process.env.PORT || 5050;
 
-app.use(cors());
+const isProduction =
+  process.env.MODE && process.env.MODE.toLowerCase() === "production";
+
+app.use(
+  cors({
+    origin: isProduction
+      ? "https://imanibrown.onrender.com"
+      : `http://localhost:3000`,
+    optionsSuccessStatus: 200,
+  })
+);
+
 app.use(bodyParser.json());
 
 app.use("/api", apiRoutes);
 
-if (process.env.MODE === "Production") {
-  app.use(express.static(path.resolve(__dirname, "./frontend/dist")));
+if (isProduction) {
+  app.use(express.static(path.resolve(__dirname, "../frontend/dist")));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./frontend/dist/index.html"));
+    res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"));
   });
 } else {
   app.get("/", (req, res) => {
@@ -26,23 +41,7 @@ if (process.env.MODE === "Production") {
   });
 }
 
-app.use((err: any, req: express.Request, res: express.Response, next: any) => {
-  if (err.statusCode) {
-    res.status(err.code).json({
-      success: false,
-      message: err.message,
-      code: err.statusCode,
-      error: err,
-    });
-  } else {
-    res.status(500).json({
-      success: false,
-      message: err.message,
-      code: 500,
-      error: err,
-    });
-  }
-});
+app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`listening on localhost:${port}`);

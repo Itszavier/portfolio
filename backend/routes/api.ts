@@ -4,8 +4,9 @@ import { Router } from "express";
 import { z } from "zod";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+const rateLimit = require("express-rate-limit");
 
-dotenv.config()
+dotenv.config({ path: "../../.env" });
 
 const router = Router();
 
@@ -20,7 +21,17 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.post("/contact-me", async (req, res, next) => {
+// Define the rate limit options
+const rateLimitOptions = {
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 2, // limit each IP to 100 requests per windowMs
+  message: "Too many requests from this IP, please try again later.",
+};
+
+// Apply rate limiting middleware
+const limiter = rateLimit(rateLimitOptions);
+
+router.post("/contact-me", limiter, async (req, res, next) => {
   try {
     const bodySchema = z.object({
       name: z

@@ -20,68 +20,73 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      const formSchema = z.object({
-        name: z
-          .string({
-            invalid_type_error: "Name must be a string",
-            required_error: "Name is required but missing.",
-          })
-          .min(1, "Message must be at least 1 characters long."),
 
-        email: z
-          .string({
-            invalid_type_error: "Message must be a string",
-            required_error: "Email field is required but missing.",
-          })
-          .min(2, "Message must be at least 2 characters long.")
-          .email(
-            "Invalid email format. Please ensure you have the correct email format."
-          ),
-        message: z
-          .string({
-            invalid_type_error: "message must be a string",
-            required_error: "Message is required but missing.",
-          })
-          .min(12, "Message must be at least 12 characters long."),
-      });
+    const formSchema = z.object({
+      name: z
+        .string({
+          invalid_type_error: "Name must be a string",
+          required_error: "Name is required but missing.",
+        })
+        .min(1, "Message must be at least 1 characters long."),
 
-      const validate = formSchema.safeParse({ name, email, message });
+      email: z
+        .string({
+          invalid_type_error: "Message must be a string",
+          required_error: "Email field is required but missing.",
+        })
+        .min(2, "Message must be at least 2 characters long.")
+        .email(
+          "Invalid email format. Please ensure you have the correct email format."
+        ),
+      message: z
+        .string({
+          invalid_type_error: "message must be a string",
+          required_error: "Message is required but missing.",
+        })
+        .min(12, "Message must be at least 12 characters long."),
+    });
 
-      setLoading(true);
+    const validate = formSchema.safeParse({ name, email, message });
 
-      if (validate.success) {
-        request
-          .post("contact-me", {
-            name,
-            email,
-            message,
-          })
-          .then((res) => {
-            console.log(res);
-            setSuccessMessage(
-              "Your message was sent successfully, thank you for contacting us"
+    setLoading(true);
+
+    if (validate.success) {
+      request
+        .post("/contact-me", {
+          name,
+          email,
+          message,
+        })
+        .then((res) => {
+          console.log(res);
+          setSuccessMessage(
+            "Your message was sent successfully, thank you for contacting us"
+          );
+          if (error) {
+            setError(null);
+          }
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+          if (successMessage) {
+            setSuccessMessage(null);
+          }
+          if (axios.isAxiosError(err)) {
+            if (err.response?.status === 429) {
+              return setError(err.response.data);
+            }
+            setError(err.response?.data.message);
+          } else {
+            setError(
+              "Sorry, a unexpected error occured developer has been notified"
             );
-            setLoading(false);
-          })
-          .catch((err) => {
-            console.log(err);
-            alert("unexpected error occured");
-            setLoading(false);
-          });
-      } else {
-        setErrors(validate.error.errors);
-        setLoading(false);
-      }
-    } catch (error) {
+          }
+        });
+    } else {
+      setErrors(validate.error.errors);
       setLoading(false);
-      if (axios.isAxiosError(error)) {
-        setError(error.response?.data.message);
-      } else {
-        setError(
-          "Sorry, a unexpected error occured developer has been notified"
-        );
-      }
     }
   };
 
