@@ -79,7 +79,7 @@
 
   .link_container {
     position: absolute;
-    bottom: -100px;
+    bottom: -140px;
     width: 100%;
     flex-direction: column;
     background-color: rgb(8, 27, 46);
