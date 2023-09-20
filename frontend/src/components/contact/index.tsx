@@ -57,7 +57,7 @@ export default function Contact() {
           email,
           message,
         })
-        .then((res) => {
+        .then(() => {
           setSuccessMessage(
             "Your message was sent successfully, thank you for contacting us"
           );
