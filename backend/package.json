@@ -6,7 +6,7 @@
   "scripts": {
     "test": "ts-node ./index.ts",
     "start": "ts-node ./index.ts",
-    "build": "cd ../frontend  && npm run build && cd ../backend && npm i && npm run start"
+    "build": "cd ../frontend  && npm run build && cd ../backend && npm install"
   },
   "author": "",
   "license": "ISC",
