@@ -9,7 +9,7 @@ import { errorMessage } from "./utils/errorResponse";
 import errorHandler from "./middleware/error";
 const app = express();
 
-dotenv.config({ path: "../.env" });
+dotenv.config();
 
 const port = process.env.PORT || 5050;
 
