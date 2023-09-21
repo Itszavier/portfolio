@@ -17,12 +17,7 @@ const isProduction =
   process.env.MODE && process.env.MODE.toLowerCase() === "production";
 
 app.use(
-  cors({
-    origin: isProduction
-      ? "https://imanibrown.onrender.com"
-      : `http://localhost:3000`,
-    optionsSuccessStatus: 200,
-  })
+  cors()
 );
 
 app.use(bodyParser.json());
