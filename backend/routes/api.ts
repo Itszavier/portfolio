@@ -6,7 +6,7 @@ import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 const rateLimit = require("express-rate-limit");
 
-dotenv.config({ path: "../../.env" });
+dotenv.config();
 
 const router = Router();
 
