@@ -24,14 +24,14 @@ router.get("/", async (req, res, next) => {
 // Define the rate limit options
 const rateLimitOptions = {
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 2, // limit each IP to 100 requests per windowMs
+  max: 4, // limit each IP to 100 requests per windowMs
   message: "Too many requests from this IP, please try again later.",
 };
 
 // Apply rate limiting middleware
 const limiter = rateLimit(rateLimitOptions);
 
-router.post("/contact-me", limiter, async (req, res, next) => {
+router.post("/contact-me", rateLimit, async (req, res, next) => {
   try {
     const bodySchema = z.object({
       name: z
@@ -70,7 +70,7 @@ router.post("/contact-me", limiter, async (req, res, next) => {
     });
 
     const info = await tranporter.sendMail({
-      from: process.env.EMAIL_USER, // sender address
+      // from: process.env.EMAIL_USER, // sender address
       to: "imanibrown421@gmail.com", // list of receivers
       subject: `(Personal Website contact you) - (${body.name})`, // Subject line
       text: `name:${body.name} - email: ${body.email},\n\n${body.message}`,
@@ -82,6 +82,7 @@ router.post("/contact-me", limiter, async (req, res, next) => {
       data: info,
     });
   } catch (error) {
+    console.log(error);
     next(error);
   }
 });

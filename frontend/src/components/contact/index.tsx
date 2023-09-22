@@ -72,7 +72,9 @@ export default function Contact() {
             setSuccessMessage(null);
           }
           if (axios.isAxiosError(err)) {
+            
             if (err.response?.status === 429) {
+             
               return setError(err.response.data);
             }
             setError(err.response?.data.message);
