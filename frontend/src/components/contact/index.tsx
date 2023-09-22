@@ -162,7 +162,7 @@ export default function Contact() {
               </a>
             </div>
 
-            <button type="submit" className={style.submit_btn}>
+            <button disabled={loading} type="submit" className={style.submit_btn}>
               Submit {loading ? "..." : ""}
             </button>
           </div>

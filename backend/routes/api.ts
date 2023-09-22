@@ -31,7 +31,7 @@ const rateLimitOptions = {
 // Apply rate limiting middleware
 const limiter = rateLimit(rateLimitOptions);
 
-router.post("/contact-me", rateLimit, async (req, res, next) => {
+router.post("/contact-me", limiter, async (req, res, next) => {
   try {
     const bodySchema = z.object({
       name: z
