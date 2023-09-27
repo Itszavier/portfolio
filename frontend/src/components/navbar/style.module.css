@@ -13,6 +13,7 @@
   background-color: rgb(12, 12, 2);
   width: 100%;
   right: 0;
+ 
   background: rgb(2, 9, 15);
 }
 
@@ -29,6 +30,7 @@
   text-decoration: none;
   color: white;
   text-transform: capitalize;
+  font-family: 'Roboto', sans-serif;
 }
 
 .hire_me {
