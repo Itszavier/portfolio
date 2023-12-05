@@ -14,7 +14,7 @@ const projects: IProjectData[] = [
     name: "SoundScript(Text To Speech)",
     description:
       "SoundScript is a Text To Speech website that allows you to convert text to speech and download it",
-    link: "#",
+    link: "https://soundscript.pages.dev/",
     image: "https://i.ibb.co/mShmmsc/design11-01-generated.jpg",
     bot: false,
   },
