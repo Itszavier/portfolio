@@ -1,5 +1,5 @@
 /** @format */
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo2.jpg";
