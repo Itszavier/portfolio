@@ -1,13 +1,28 @@
 /** @format */
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Nunito:wght@200&family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Croissant+One&family=Nunito:wght@200&family=Roboto&display=swap");
+
+:root {
+  --primary: #add8e6;
+  --secondary: #99c2cf;
+}
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
- 
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 body {
@@ -49,4 +64,8 @@ body {
   scrollbar-width: 11px; /* width of the scrollbar */
   scrollbar-color: #333 #f1f1f1; /* thumb and track colors */
   scroll-behavior: smooth;
+}
+
+.material-icons hamburger {
+  color: black;
 }

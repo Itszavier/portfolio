@@ -5,12 +5,12 @@
   width: 100%;
   /* background: rgb(15, 15, 2);*/
   position: relative;
-  color: white;
+  color: rgb(0, 0, 0);
   /* background: linear-gradient(to right, rgb(15, 15, 2), rgb(26, 26, 3));*/
-  background: linear-gradient(to right, rgb(2, 9, 15), rgb(5, 20, 34));
+  background-color: var(--primary);
 }
 
-.content  {
+.content {
   width: 60%;
   position: absolute;
   left: 50%;
@@ -26,8 +26,8 @@
 
 .content p {
   text-align: center;
-  color: grey;
-  font-family: 'Croissant One', cursive;
+  color: rgb(49, 49, 49);
+  font-family: Arial, Helvetica, sans-serif;
 }
 .content h1 {
   text-align: center;
@@ -44,10 +44,11 @@ content h3 {
   flex-direction: row;
   justify-content: space-evenly;
   padding: 10px;
-  box-shadow: inset 4px 4px 8px rgb(43, 43, 41);
+  /* box-shadow: inset 4px 4px 8px rgb(43, 43, 41); */
   right: 0;
   bottom: 0px;
   gap: 15px;
+  background-color: #93bfcc;
 }
 
 .icon {
@@ -71,14 +72,12 @@ content h3 {
   }
 
   content p {
-   font-size: 15.27px;
+    font-size: 15.27px;
   }
-
 
   .content h3 {
     font-size: 15.17px;
     width: 100%;
     text-align: center;
   }
-
 }

@@ -31,12 +31,11 @@ const projects: IProjectData[] = [
 export default function Projects() {
   return (
     <div className={style.container}>
-      <h2 className={style.header}>Projects</h2>
       <div className={style.card_container}>
         {projects.map((data, index) => {
           return (
             <div className={style.card} key={index}>
-              <img src={data.image} alt="image" className={style.image} />
+              {/*  <img src={data.image} alt="image" className={style.image} />*/}
               <div className={style.wrapper}>
                 <h4 className={style.name}>{data.name}</h4>
                 <p className={style.description}>{data.description}</p>

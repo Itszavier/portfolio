@@ -1,9 +1,9 @@
 /** @format */
 
 .footer {
-  background-color: rgb(2, 9, 15);
+  background: rgb(146, 182, 194);
   padding: 10px;
-  color: white;
+  color: rgb(0, 0, 0);
   display: flex;
   align-items: center;
   flex-direction: column;

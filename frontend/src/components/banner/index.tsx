@@ -6,8 +6,9 @@ export default function Banner() {
   return (
     <div className={style.container}>
       <div className={style.content}>
-        <h1>Imani Zavier Brown</h1>
-        <h3>Student Athlete | Full-Stack Developer | Visionary</h3>
+        <h2 style={{ textAlign: "center" }}>
+          Student Athlete - Full-Stack Developer - Visionary
+        </h2>
         <p>
           Join me on a journey from the courts to coding. I'm Imani Brown, a
           passionate student-athlete and expert in full-stack web development.

@@ -1,20 +1,20 @@
 /** @format */
 
 .navbar {
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 15px;
   background: transparent;
   position: fixed;
   z-index: 10;
-  box-shadow: 4px 10px -8px rgb(0, 0, 0);
+  box-shadow: 0px 23px 12px -3px rgba(0, 0, 0, 0.1);
   display: flex;
   font-size: 19.19px;
   align-items: center;
-  background-color: rgb(12, 12, 2);
+  /*background-color: rgb(12, 12, 2);*/
   width: 100%;
   right: 0;
- 
-  background: rgb(2, 9, 15);
+
+  background: lightblue;
 }
 
 .link_container {
@@ -28,13 +28,13 @@
 
 .link {
   text-decoration: none;
-  color: white;
+  color: rgb(0, 0, 0);
   text-transform: capitalize;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .hire_me {
-  background-color: rgb(5, 31, 59);
+  background-color: var(--secondary);
   border-radius: 4px;
   padding: 8px 15px;
   border: none;
@@ -57,7 +57,7 @@
 
 .menu span {
   font-size: 50px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .logo_wrapper {
@@ -66,6 +66,10 @@
   align-items: center;
   flex-direction: row;
   width: 200px;
+}
+
+.menu {
+  color: black;
 }
 
 .logo {
@@ -93,8 +97,6 @@
     padding: 10px;
     transition: all ease-in-out 9000ms;
   }
-
-
 
   .link {
     width: 100%;

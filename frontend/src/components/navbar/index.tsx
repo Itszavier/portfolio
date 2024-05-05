@@ -1,5 +1,5 @@
 /** @format */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo2.jpg";
@@ -24,10 +24,10 @@ export default function Navbar() {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
-    <nav className={style.navbar}>
+    <nav className={`${style.navbar}`}>
       <Link
         className={style.logo_wrapper}
-        style={{ color: "white", textDecoration: "none" }}
+        style={{ color: "black", textDecoration: "none" }}
         to="/"
         onClick={() => {
           if (open) {
@@ -47,12 +47,8 @@ export default function Navbar() {
       </button>
 
       <div className={`${style.link_container}  ${open ? style.open : ""}`}>
-        <Link
-          onClick={() => setOpen(false)}
-          to="/"
-          className={style.link}
-        >
-         home
+        <Link onClick={() => setOpen(false)} to="/" className={style.link}>
+          home
         </Link>
 
         <Link
