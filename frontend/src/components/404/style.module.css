@@ -4,8 +4,7 @@
   height: 100vh;
   padding-top: 80px;
   position: relative;
-  background: linear-gradient(to right, rgb(52, 79, 104), rgb(43, 63, 82));
-  background: linear-gradient(to right, rgb(2, 9, 15), rgb(5, 20, 34));
+  background: var(--secondary);
 }
 
 .wrapper {
@@ -13,7 +12,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: rgb(0, 0, 0);
   width: 100%;
 }
 

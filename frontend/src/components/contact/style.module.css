@@ -7,7 +7,7 @@
   padding-bottom: 8px;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, rgb(2, 9, 15), rgb(5, 20, 34));
+  background: var(--secondary);
 }
 
 .error {
@@ -18,7 +18,7 @@
   width: fit-content;
   height: fit-content;
   padding: 10px;
-  color: white;
+  color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -29,7 +29,7 @@
   padding: 10px;
   width: 780px;
   display: flex;
-  color: white;
+  color: rgb(0, 0, 0);
   gap: 10px;
   flex-direction: column;
   height: fit-content;
@@ -56,11 +56,7 @@
   border: none;
   color: white;
   border-radius: 2px;
-  background: linear-gradient(
-    to right,
-    rgb(4, 17, 29, 4.8),
-    rgb(6, 22, 37, 4.8)
-  );
+  background: linear-gradient(to right, rgb(4, 17, 29), rgb(6, 22, 37));
 }
 
 .input_wrapper input::placeholder {
@@ -160,7 +156,6 @@
 @media screen and (min-width: 100px) and (max-width: 780px) {
   .content {
     padding-top: 95px;
-  
   }
   .title {
   }

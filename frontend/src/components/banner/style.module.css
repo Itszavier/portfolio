@@ -66,7 +66,7 @@ content h3 {
 
 @media screen and (min-width: 100px) and (max-width: 780px) {
   .content {
-    padding: 0;
+    padding: 10px;
     width: 100%;
     justify-content: center;
   }

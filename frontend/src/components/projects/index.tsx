@@ -11,7 +11,7 @@ interface IProjectData {
 
 const projects: IProjectData[] = [
   {
-    name: "SoundScript(Text To Speech)",
+    name: "SoundScript",
     description:
       "SoundScript is a Text To Speech website that allows you to convert text to speech and download it",
     link: "https://soundscript.pages.dev/",
@@ -20,7 +20,7 @@ const projects: IProjectData[] = [
   },
 
   {
-    name: "Senior7(s7)",
+    name: "Senior7 Discord Bot",
     description: `Meet S7, the reliable Utilities bot on Discord that runs 24/7. Our team of professional developers ensures that it is always well-maintained for optimal performance. `,
     link: "https://s7bot.onrender.com/",
     image: "https://i.ibb.co/Y0VbpSv/management-service.png",

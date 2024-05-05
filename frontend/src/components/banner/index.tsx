@@ -6,12 +6,13 @@ export default function Banner() {
   return (
     <div className={style.container}>
       <div className={style.content}>
-        <h2 style={{ textAlign: "center" }}>
-          Student Athlete - Full-Stack Developer - Visionary
-        </h2>
+        <h2 style={{ textAlign: "center" }}>Coder, Athlete, Writer</h2>
         <p>
-          Join me on a journey from the courts to coding. I'm Imani Brown, a
-          passionate student-athlete and expert in full-stack web development.
+          Hello there! I'm a programmer, athlete, and avid writer, passionate
+          about sharing my ideas with the world. Whether I'm coding, hitting the
+          track or playing basketball, or penning down my thoughts, I thrive on
+          expressing myself creatively and making an impact. Join me on my
+          journey as I blend my love for technology, sports, and storytelling
         </p>
       </div>
 
