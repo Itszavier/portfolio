@@ -1,0 +1,7 @@
+.container {
+  padding-top: 67px;
+  background-color: var(--secondary);
+  width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+}

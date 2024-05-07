@@ -53,6 +53,14 @@ export default function Navbar() {
 
         <Link
           onClick={() => setOpen(false)}
+          to="/records"
+          className={style.link}
+        >
+          records
+        </Link>
+
+        <Link
+          onClick={() => setOpen(false)}
           to="/contact"
           className={style.link}
         >
